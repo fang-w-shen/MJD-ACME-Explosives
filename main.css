@@ -8,3 +8,6 @@ h1{
 .tree {
 	justify-content:left;
 }
+td {
+	width:33%;
+}
