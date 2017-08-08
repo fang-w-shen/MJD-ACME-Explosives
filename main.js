@@ -15,7 +15,8 @@ var firstAJAX = function() {
 };
 
 // This function does one thing, and returns a promise
-var secondAJAX = function(result_of_firstXHR) {
+var secondAJAX = function(//result_of_firstXHR
+  ) {
   return new Promise((resolve, reject) => {
     $.ajax({
       url: "types.json",
@@ -31,7 +32,8 @@ var secondAJAX = function(result_of_firstXHR) {
 };
 
 // This function does one thing, and returns a promise
-var thirdAJAX = function(result_of_secondXHR) {
+var thirdAJAX = function(//result_of_secondXHR
+  ) {
   return new Promise((resolve, reject) => {
     $.ajax({
       url: "products.json",
@@ -56,11 +58,13 @@ var thirdAJAX = function(result_of_secondXHR) {
 firstAJAX()
   .then(function(data1) {
      printcategories(data1.categories)
-  	 return secondAJAX(data1);
+  	 return secondAJAX(//data1
+      );
   })
   .then(function(data2) {
       gettype(data2);
-      return thirdAJAX(data2);
+      return thirdAJAX(//data2
+        );
   }).then(function(data3){
       getproduct(data3)
   });
