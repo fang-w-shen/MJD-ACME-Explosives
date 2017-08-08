@@ -41,7 +41,7 @@ var thirdAJAX = function(//result_of_secondXHR
     }).done(function(data) {
       resolve(data);
     }).fail(function(xhr, status, error) {
-      reject(error);
+      reject(new Error("oops rejected haha"));
     });
   })
 };
@@ -68,6 +68,5 @@ firstAJAX()
   }).then(function(data3){
       getproduct(data3)
   });
-
   
 })
